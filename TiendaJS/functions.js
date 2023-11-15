@@ -10,7 +10,7 @@ function generateProductCards(products) {
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>Color: ${product.color}</p>
-      <p>Precio: $${product.price}</p>
+      <p>Precio: €${product.price}</p>
     `;
     productContainer.appendChild(card);
   });
@@ -36,7 +36,7 @@ function filterProducts(products) {
 
   const filteredProducts = products.filter(product => {
     return (!colorValue || product.color === colorValue) &&
-      (!priceValue || product.price < priceValue);
+      (!priceValue || product.price > priceValue);
   });
 
 

@@ -10,18 +10,20 @@
 </head>
 
 <body>
+
   <section class="filters">
+    <img src="./public/ASSETS/1280px-Zara_Logo.svg.png" alt="Zara-logo">
     <label for="colorFilter">Filtrar por color:</label>
     <select id="colorFilter"></select>
 
-    <label for="priceFilter">Filtrar por precio menor a:</label>
+    <label for="priceFilter">Filtrar por precio mayor a:</label>
     <input type="number" id="priceFilter">
 
 
-    <button id="applyFiltersButton">Buscar</button>
+    <button id="applyFiltersButton" class="primary">Buscar</button>
 
 
-    <button id="clearFiltersButton">Limpiar Filtros</button>
+    <button id="clearFiltersButton" class="secondary">Limpiar Filtros</button>
   </section>
 
   <section class="products" id="productContainer"></section>
