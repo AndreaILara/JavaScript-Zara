@@ -91,3 +91,22 @@ button:hover {
   max-width: 100%;
   height: auto;
 }
+@media only screen and (max-width: 600px) {
+  .filters,
+  .products {
+    width: 100%;
+    padding: 10px; 
+  }
+
+  .product-card {
+    margin-bottom: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+  }
+
+  .product-card p {
+    font-size: 0.8rem; 
+  }
+}
