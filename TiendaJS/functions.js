@@ -1,4 +1,3 @@
-
 function generateProductCards(products) {
   const productContainer = document.getElementById('productContainer');
   productContainer.innerHTML = '';
@@ -16,7 +15,6 @@ function generateProductCards(products) {
   });
 }
 
-
 function fillColorFilter(products) {
   const colorFilter = document.getElementById('colorFilter');
   const colors = [...new Set(products.map(product => product.color))];
@@ -29,25 +27,30 @@ function fillColorFilter(products) {
   });
 }
 
-
 function filterProducts(products) {
   const colorValue = document.getElementById('colorFilter').value;
-  const priceValue = parseFloat(document.getElementById('priceFilter').value);
+  const priceInput = document.getElementById('priceFilter');
+  let priceValue = parseFloat(priceInput.value);
+
+
+  if (priceValue < 0 || isNaN(priceValue)) {
+    priceValue = 0;
+    priceInput.value = priceValue;
+  }
 
   const filteredProducts = products.filter(product => {
     return (!colorValue || product.color === colorValue) &&
-      (!priceValue || product.price > priceValue);
+      (!isNaN(priceValue) && product.price > priceValue);
   });
-
 
   generateProductCards(filteredProducts);
 }
 
-
 function clearFilters(products) {
+
+  document.getElementById('priceFilter').value = '';
 
   generateProductCards(products);
 }
-
 
 export { generateProductCards, fillColorFilter, filterProducts, clearFilters };
