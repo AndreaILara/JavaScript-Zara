@@ -32,7 +32,7 @@ function filterProducts(products) {
   const priceInput = document.getElementById('priceFilter');
   let priceValue = parseFloat(priceInput.value);
 
-  if (isNaN(priceValue) || priceValue < 1) {
+  if (isNaN(priceValue) || priceValue <= 1) {
     priceValue = 1;
     priceInput.value = priceValue;
   }
