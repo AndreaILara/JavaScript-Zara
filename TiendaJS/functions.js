@@ -45,10 +45,10 @@ function filterProducts(products) {
   });
   generateProductCards(filteredProducts);
 }
-
 function clearFilters(products) {
-  document.getElementById('priceFilter').value = '';
+  const priceInput = document.getElementById('priceFilter');
+  priceInput.value = '';
+
   generateProductCards(products);
 }
-
 export { generateProductCards, fillColorFilter, filterProducts, clearFilters };
