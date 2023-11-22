@@ -33,23 +33,21 @@ function filterProducts(products) {
   let priceValue = parseFloat(priceInput.value);
 
 
-  if (priceValue < 0 || isNaN(priceValue)) {
+  if (isNaN(priceValue) || priceValue < 0) {
     priceValue = 0;
     priceInput.value = priceValue;
   }
 
   const filteredProducts = products.filter(product => {
-    return (!colorValue || product.color === colorValue) &&
-      (!isNaN(priceValue) && product.price > priceValue);
-  });
 
+    return ((colorValue === '-' || product.color === colorValue) || colorValue === '') &&
+      (!isNaN(priceValue) && product.price >= priceValue);
+  });
   generateProductCards(filteredProducts);
 }
 
 function clearFilters(products) {
-
   document.getElementById('priceFilter').value = '';
-
   generateProductCards(products);
 }
 
