@@ -32,8 +32,8 @@ function filterProducts(products) {
   const priceInput = document.getElementById('priceFilter');
   let priceValue = parseFloat(priceInput.value);
 
-  if (isNaN(priceValue) || priceValue < 0) {
-    priceValue = 0;
+  if (isNaN(priceValue) || priceValue < 1) {
+    priceValue = 1;
     priceInput.value = priceValue;
   }
 
@@ -47,7 +47,6 @@ function filterProducts(products) {
 function clearFilters(products) {
   const priceInput = document.getElementById('priceFilter');
   priceInput.value = '';
-
 
   generateProductCards(products);
 }
