@@ -32,23 +32,24 @@ function filterProducts(products) {
   const priceInput = document.getElementById('priceFilter');
   let priceValue = parseFloat(priceInput.value);
 
-
   if (isNaN(priceValue) || priceValue < 0) {
     priceValue = 0;
     priceInput.value = priceValue;
   }
 
   const filteredProducts = products.filter(product => {
-
     return ((colorValue === '-' || product.color === colorValue) || colorValue === '') &&
       (!isNaN(priceValue) && product.price >= priceValue);
   });
   generateProductCards(filteredProducts);
 }
+
 function clearFilters(products) {
   const priceInput = document.getElementById('priceFilter');
   priceInput.value = '';
 
+
   generateProductCards(products);
 }
+
 export { generateProductCards, fillColorFilter, filterProducts, clearFilters };

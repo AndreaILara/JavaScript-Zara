@@ -7,6 +7,5 @@ generateProductCards(products);
 const applyFiltersButton = document.getElementById('applyFiltersButton');
 const clearFiltersButton = document.getElementById('clearFiltersButton');
 
-
 applyFiltersButton.addEventListener('click', () => filterProducts(products));
 clearFiltersButton.addEventListener('click', () => clearFilters(products));
